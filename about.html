@@ -46,12 +46,19 @@ img { max-width: 100%; display: block; }
     z-index: 9999;
     border-bottom: 1px solid rgba(212,175,55,0.15);
 }
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: white;
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:white;
 }
+
+.logo img{
+    width:40px;
+}
+
+    
+
 .logo-icon {
     width: 42px; height: 42px;
     background: var(--gold);
@@ -531,10 +538,8 @@ img { max-width: 100%; display: block; }
 <!-- NAVBAR -->
 <nav class="navbar">
     <div class="logo">
-        <div class="logo-icon">JP</div>
-        <div class="logo-text">
-            <strong>JPIA</strong>
-            <small>UE Caloocan</small>
+       <img src="images/logo.png">
+        <span>JPIA<br><small>UE Caloocan</small></span>
         </div>
     </div>
     <div class="nav-links">

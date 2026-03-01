@@ -31,13 +31,8 @@ img { max-width: 100%; display: block; }
     background: rgba(2,47,43,0.85); backdrop-filter: blur(16px);
     z-index: 9999; border-bottom: 1px solid rgba(212,175,55,0.15);
 }
-.logo { display: flex; align-items: center; gap: 12px; color: white; }
-.logo-icon {
-    width: 42px; height: 42px; background: var(--gold); border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'Cormorant Garamond', serif; font-size: 18px;
-    font-weight: 700; color: var(--teal-dark);
-}
+.logo { display: flex; align-items: center; gap: 10px; color: white; }
+.logo img { width: 40px; }
 .logo-text strong { display: block; font-size: 15px; letter-spacing: 0.05em; color: white; }
 .logo-text small { font-size: 11px; opacity: 0.7; letter-spacing: 0.08em; color: white; }
 .nav-links { display: flex; gap: 32px; }
@@ -489,11 +484,10 @@ img { max-width: 100%; display: block; }
 <!-- NAVBAR -->
 <nav class="navbar">
     <div class="logo">
-        <div class="logo-icon">JP</div>
-        <div class="logo-text">
-            <strong>JPIA</strong>
-            <small>UE Caloocan</small>
-        </div>
+        <div class="logo">
+        <img src="images/logo.png" alt="JPIA Logo">
+        <span>JPIA<br><small>UE Caloocan</small></span>
+    </div>
     </div>
     <div class="nav-links">
         <a href="main.html">Home</a>
