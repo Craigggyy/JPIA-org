@@ -193,10 +193,10 @@ img { max-width: 100%; display: block; }
     overflow: hidden;
     background: rgba(255,255,255,0.1);
 }
-/* ↓ REPLACE src with your image path or URL */
 .president-photo-wrap img {
     width: 100%; height: 100%;
-    object-fit: cover; object-position: top;
+    object-fit: cover;
+    object-position: center top; /* FIX: center horizontally, bias toward top for faces */
     display: block;
 }
 .president-info { flex: 1; }
@@ -238,15 +238,18 @@ img { max-width: 100%; display: block; }
 .member-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(13,92,92,0.14); }
 .member-card:hover::before { transform: scaleX(1); }
 
-/* Member photo container */
+/* Member photo container — FIX: natural aspect ratio, no forced height */
 .member-photo-wrap {
-    overflow: hidden; height: 230px;
+    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 3 / 4; /* consistent portrait ratio without forcing a fixed pixel height */
     background: linear-gradient(135deg, #ddeaea, #b8d0d0);
+    display: flex; align-items: flex-start; justify-content: center;
 }
-/* ↓ REPLACE src with your image path or URL */
 .member-photo-wrap img {
     width: 100%; height: 100%;
-    object-fit: cover; object-position: top;
+    object-fit: cover;
+    object-position: center top; /* keeps faces in frame */
     display: block; transition: transform 0.5s;
 }
 .member-card:hover .member-photo-wrap img { transform: scale(1.05); }
@@ -286,15 +289,19 @@ img { max-width: 100%; display: block; }
     border-color: rgba(212,175,55,0.5); box-shadow: 0 20px 50px rgba(0,0,0,0.3);
 }
 
-/* Rep photo container */
+/* Rep photo container — FIX: use aspect-ratio instead of fixed height */
 .rep-photo-wrap {
-    overflow: hidden; height: 260px; position: relative;
+    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    position: relative;
     background: linear-gradient(145deg, rgba(212,175,55,0.15), rgba(255,255,255,0.05));
+    display: flex; align-items: flex-start; justify-content: center;
 }
-/* ↓ REPLACE src with your image path or URL */
 .rep-photo-wrap img {
     width: 100%; height: 100%;
-    object-fit: cover; object-position: top;
+    object-fit: cover;
+    object-position: center top;
     display: block; filter: brightness(0.9);
     transition: transform 0.5s, filter 0.4s;
 }
@@ -333,15 +340,19 @@ img { max-width: 100%; display: block; }
 }
 .adviser-card:hover { transform: translateY(-8px); box-shadow: 0 28px 60px rgba(13,92,92,0.18); }
 
-/* Adviser photo container */
+/* Adviser photo container — FIX: use aspect-ratio instead of fixed height */
 .adviser-photo-wrap {
-    overflow: hidden; height: 320px; position: relative;
+    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    position: relative;
     background: linear-gradient(145deg, #c5dede, #8eb8b8);
+    display: flex; align-items: flex-start; justify-content: center;
 }
-/* ↓ REPLACE src with your image path or URL */
 .adviser-photo-wrap img {
     width: 100%; height: 100%;
-    object-fit: cover; object-position: top;
+    object-fit: cover;
+    object-position: center top;
     display: block; transition: transform 0.5s;
 }
 .adviser-card:hover .adviser-photo-wrap img { transform: scale(1.04); }
@@ -443,8 +454,6 @@ img { max-width: 100%; display: block; }
 .footer-logo {
     width: 250px;
     height: 250px;
-
-    
 }
 
 /* Footer Nav Links */
@@ -463,7 +472,7 @@ img { max-width: 100%; display: block; }
 }
 
 .footer-nav a:hover {
-    color: #d4af37; /* gold hover effect */
+    color: #d4af37;
     opacity: 1;
 }
 
@@ -497,9 +506,8 @@ img { max-width: 100%; display: block; }
         <a href="members.html">Members</a>
         <a href="news.html">News</a>
         <a href="contact.html">Contact</a>
-        <a href="dev.html">Developer</a>
     </div>
-    <a href="contact.html" class="join-btn">Join Us</a>
+    <a href="#" class="join-btn">Join Us</a>
 </nav>
 
 <!-- HERO -->
@@ -567,8 +575,7 @@ img { max-width: 100%; display: block; }
         <div class="president-wrap">
             <div class="president-card">
                 <div class="president-photo-wrap">
-                    <!-- REPLACE src below with your photo path or URL -->
-                    <img src="images/richard-vito.jpg" alt="Richard Jr. A. Vito">
+                    <img src="pres.png" alt="Richard Jr. A. Vito">
                 </div>
                 <div class="president-info">
                     <div class="president-badge">⭐ President</div>
@@ -585,8 +592,7 @@ img { max-width: 100%; display: block; }
         <div class="vp-grid">
             <div class="member-card">
                 <div class="member-photo-wrap">
-                    <!-- REPLACE src below with your photo path or URL -->
-                    <img src="images/kamille-garcia.jpg" alt="Kamille A. Garcia">
+                    <img src="Kamille.png" alt="Kamille A. Garcia">
                 </div>
                 <div class="member-body">
                     <div class="member-name">Kamille A. Garcia</div>
@@ -595,8 +601,7 @@ img { max-width: 100%; display: block; }
             </div>
             <div class="member-card">
                 <div class="member-photo-wrap">
-                    <!-- REPLACE src below with your photo path or URL -->
-                    <img src="images/lanz-campos.jpg" alt="Lanz Benedict N. Campos">
+                    <img src="Lanz.png" alt="Lanz Benedict N. Campos">
                 </div>
                 <div class="member-body">
                     <div class="member-name">Lanz Benedict N. Campos</div>
@@ -605,8 +610,7 @@ img { max-width: 100%; display: block; }
             </div>
             <div class="member-card">
                 <div class="member-photo-wrap">
-                    <!-- REPLACE src below with your photo path or URL -->
-                    <img src="images/jasmine-margelino.jpg" alt="Jasmine Nicole D. Margelino">
+                    <img src="Jasmine.png" alt="Jasmine Nicole D. Margelino">
                 </div>
                 <div class="member-body">
                     <div class="member-name">Jasmine Nicole D. Margelino</div>
@@ -619,8 +623,7 @@ img { max-width: 100%; display: block; }
         <div class="vp-grid">
             <div class="member-card">
                 <div class="member-photo-wrap">
-                    <!-- REPLACE src below with your photo path or URL -->
-                    <img src="images/jaimie-castro.jpg" alt="Jaimie Angelique P. Castro">
+                    <img src="jaimie.png" alt="Jaimie Angelique P. Castro">
                 </div>
                 <div class="member-body">
                     <div class="member-name">Jaimie Angelique P. Castro</div>
@@ -629,8 +632,7 @@ img { max-width: 100%; display: block; }
             </div>
             <div class="member-card">
                 <div class="member-photo-wrap">
-                    <!-- REPLACE src below with your photo path or URL -->
-                    <img src="images/ahlvyne-molina.jpg" alt="Ahlvyne Lloyd V. Molina">
+                    <img src="ahlvyne.png" alt="Ahlvyne Lloyd V. Molina">
                 </div>
                 <div class="member-body">
                     <div class="member-name">Ahlvyne Lloyd V. Molina</div>
@@ -639,8 +641,7 @@ img { max-width: 100%; display: block; }
             </div>
             <div class="member-card">
                 <div class="member-photo-wrap">
-                    <!-- REPLACE src below with your photo path or URL -->
-                    <img src="images/leanne-bagtas.jpg" alt="Leanne Angel P. Bagtas">
+                    <img src="leanne.png" alt="Leanne Angel P. Bagtas">
                 </div>
                 <div class="member-body">
                     <div class="member-name">Leanne Angel P. Bagtas</div>
@@ -653,8 +654,7 @@ img { max-width: 100%; display: block; }
         <div class="bottom-row">
             <div class="member-card">
                 <div class="member-photo-wrap">
-                    <!-- REPLACE src below with your photo path or URL -->
-                    <img src="images/kc-badion.jpg" alt="Kc Ruth Anne B. Badion">
+                    <img src="kc.png" alt="Kc Ruth Anne B. Badion">
                 </div>
                 <div class="member-body">
                     <div class="member-name">Kc Ruth Anne B. Badion</div>
@@ -663,8 +663,7 @@ img { max-width: 100%; display: block; }
             </div>
             <div class="member-card">
                 <div class="member-photo-wrap">
-                    <!-- REPLACE src below with your photo path or URL -->
-                    <img src="images/angelo-nullar.jpg" alt="Angelo Robert B. Nullar">
+                    <img src="angelo.png" alt="Angelo Robert B. Nullar">
                 </div>
                 <div class="member-body">
                     <div class="member-name">Angelo Robert B. Nullar</div>
@@ -673,8 +672,7 @@ img { max-width: 100%; display: block; }
             </div>
             <div class="member-card">
                 <div class="member-photo-wrap">
-                    <!-- REPLACE src below with your photo path or URL -->
-                    <img src="images/daniela-kiang.jpg" alt="Daniela L. Kiang">
+                    <img src="daniela.png" alt="Daniela L. Kiang">
                 </div>
                 <div class="member-body">
                     <div class="member-name">Daniela L. Kiang</div>
@@ -697,8 +695,7 @@ img { max-width: 100%; display: block; }
         <div class="reps-grid">
             <div class="rep-card">
                 <div class="rep-photo-wrap">
-                    <!-- REPLACE src below with your photo path or URL -->
-                    <img src="images/jemima-cabasal.jpg" alt="Jemima A. Cabasal">
+                    <img src="jemima.png" alt="Jemima A. Cabasal">
                     <div class="rep-year-badge">4th Year</div>
                 </div>
                 <div class="rep-body">
@@ -708,8 +705,7 @@ img { max-width: 100%; display: block; }
             </div>
             <div class="rep-card">
                 <div class="rep-photo-wrap">
-                    <!-- REPLACE src below with your photo path or URL -->
-                    <img src="images/marlon-manalang.jpg" alt="Marlon Jr. D. Manalang">
+                    <img src="marlons.png" alt="Marlon Jr. D. Manalang">
                     <div class="rep-year-badge">3rd Year</div>
                 </div>
                 <div class="rep-body">
@@ -719,8 +715,7 @@ img { max-width: 100%; display: block; }
             </div>
             <div class="rep-card">
                 <div class="rep-photo-wrap">
-                    <!-- REPLACE src below with your photo path or URL -->
-                    <img src="images/justine-pondara.jpg" alt="Justine Rose R. Pondara">
+                    <img src="justine.png" alt="Justine Rose R. Pondara">
                     <div class="rep-year-badge">2nd Year</div>
                 </div>
                 <div class="rep-body">
@@ -730,8 +725,7 @@ img { max-width: 100%; display: block; }
             </div>
             <div class="rep-card">
                 <div class="rep-photo-wrap">
-                    <!-- REPLACE src below with your photo path or URL -->
-                    <img src="images/xyrus-lacurom.jpg" alt="Xyrus John M. Lacurom">
+                    <img src="xyrus.png" alt="Xyrus John M. Lacurom">
                     <div class="rep-year-badge">1st Year</div>
                 </div>
                 <div class="rep-body">
@@ -756,8 +750,7 @@ img { max-width: 100%; display: block; }
         <div class="advisers-grid">
             <div class="adviser-card">
                 <div class="adviser-photo-wrap">
-                    <!-- REPLACE src below with your photo path or URL -->
-                    <img src="images/jhannamae-vinas.jpg" alt="Jhannamae Rose A. Viñas">
+                    <img src="jhannamae.png" alt="Jhannamae Rose A. Viñas">
                     <div class="adviser-type-badge student-badge">Student Adviser</div>
                 </div>
                 <div class="adviser-body">
@@ -768,8 +761,7 @@ img { max-width: 100%; display: block; }
             </div>
             <div class="adviser-card">
                 <div class="adviser-photo-wrap">
-                    <!-- REPLACE src below with your photo path or URL -->
-                    <img src="images/lea-vergino.jpg" alt="Ms. Lea Christine S. Vergino, CPA">
+                    <img src="lea.png" alt="Ms. Lea Christine S. Vergino, CPA">
                     <div class="adviser-type-badge faculty-badge">Faculty Adviser</div>
                 </div>
                 <div class="adviser-body">
