@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What We Do — JPIA UE Caloocan</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #f5f5f5;
+            color: #022f2b;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 60px 0;
+        }
+
+        h1.section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            text-align: center;
+            color: #0D5C5C;
+            margin-bottom: 10px;
+        }
+
+        p.section-subtitle {
+            text-align: center;
+            font-size: 16px;
+            opacity: 0.8;
+            margin-bottom: 40px;
+        }
+
+        .services-grid {
+            display: grid;
+            gap: 40px;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        }
+
+        .service-card img {
+            width: 60px;
+            height: 60px;
+        }
+
+        .service-content h3 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #0D5C5C;
+        }
+
+        .service-content p {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1.section-title {
+                font-size: 38px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- WHAT WE DO HEADER -->
+    <div class="container">
+        <h1 class="section-title">What We Do</h1>
+        <p class="section-subtitle">Empowering students through excellence, leadership, and professional growth.</p>
+
+        <!-- SERVICES GRID -->
+        <div class="services-grid">
+
+            <div class="service-card">
+                <img src="images/mission-icon.png" alt="Mission Icon">
+                <div class="service-content">
+                    <h3>Our Mission & Vision</h3>
+                    <p>We cultivate academic excellence and professional leadership among students through meaningful programs and community initiatives.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="images/leadership-icon.png" alt="Leadership Icon">
+                <div class="service-content">
+                    <h3>Leadership Development</h3>
+                    <p>Providing leadership workshops and trainings to prepare our members to excel in their careers and personal growth.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="images/events-icon.png" alt="Events Icon">
+                <div class="service-content">
+                    <h3>Events & Activities</h3>
+                    <p>Organizing events that enrich student engagement, foster collaboration, and inspire creativity within our community.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="images/membership-icon.png" alt="Membership Icon">
+                <div class="service-content">
+                    <h3>Membership Support</h3>
+                    <p>Encouraging student involvement with dedicated support systems and networking opportunities to help members thrive.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
