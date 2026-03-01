@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>JPIA UE Caloocan</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+}
+
+/* NAVBAR */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 50px;
+    position:fixed;
+    width:100%;
+    top:0;
+    background:rgba(0,0,0,0.2);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:white;
+}
+
+.logo img{
+    width:40px;
+}
+
+
+.nav-links{
+    display:flex;
+    gap:30px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:white;
+    font-size:14px;
+}
+
+.join-btn{
+    background:#d4af37;
+    color:#022f2b;
+    padding:8px 20px;
+    border-radius:20px;
+    font-size:13px;
+}
+
+/* HERO */
+.hero{
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:100px 60px;
+    background: linear-gradient(to bottom, #0D5C5C, #022f2b);
+    color:white;
+}
+
+.hero-text{
+    max-width:500px;
+}
+
+.hero-text h1{
+    font-family:'Playfair Display', serif;
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+.hero-text p{
+    margin-bottom:15px;
+    line-height:1.6;
+}
+
+.gold{
+    color:#d4af37;
+    font-style:italic;
+}
+
+.hero-buttons{
+    margin-top:20px;
+}
+
+.btn{
+    padding:10px 25px;
+    border-radius:25px;
+    margin-right:10px;
+    text-decoration:none;
+    font-size:14px;
+}
+
+.btn-primary{
+    background:#d4af37;
+    color:#022f2b;
+}
+
+.btn-outline{
+    border:1px solid white;
+    color:white;
+}
+
+/* HERO IMAGE CONTAINER */
+.hero-img{
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: center;   /* center horizontally */
+    align-items: center;       /* center vertically */
+}
+
+/* HERO IMAGE */
+.hero-img img{
+    width: 1300px;              /* increase size */
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 20px;
+    transform: translateX(50px); /* move slightly to left */
+}
+
+/* FEATURES */
+.features{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    padding:40px;
+    background:#f5f5f5;
+    
+}
+
+/* FEATURES FIXED ALIGNMENT */
+.feature-card{
+    background:white;
+    padding:25px 20px;
+    border-radius:15px;
+    width:300px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;   /* CENTER EVERYTHING */
+    text-align:center;    /* CENTER TEXT */
+}
+
+/* LOGO SIZE + CENTER */
+.feature-card img{
+    width:100px;
+    height:100px;
+    object-fit:contain;
+    margin-bottom:15px;
+
+    display:block;
+}
+
+/* TITLE */
+.feature-card h4{
+    margin-bottom:10px;
+    font-weight:bold;
+}
+
+/* DESCRIPTION */
+.feature-card p{
+    font-size:13px;
+    opacity:0.8;
+}
+
+/* MAKE FEATURE CARDS CLICKABLE */
+.feature-link{
+    text-decoration: none;
+    color: inherit;
+}
+
+.feature-link:hover .feature-card{
+    transform: translateY(-5px);
+    transition: 0.3s ease;
+}
+
+/* NEWS */
+.news{
+    text-align:center;
+    padding:60px 20px;
+}
+
+.news h2{
+    font-family:'Playfair Display', serif;
+    margin-bottom:30px;
+    color:rgb(13 92 92 / var(--tw-text-opacity, 1));
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.news-cards{
+    display:flex;
+    justify-content:center;
+    gap:50px;
+}
+
+.news-card{
+    width:500px;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.news-card img{
+    width:100%;
+}
+
+.news-card p{
+    padding:10px;
+}
+
+/* CTA */
+.cta{
+    background:#0f5c55;
+    color:white;
+    text-align:center;
+    padding:60px 20px;
+}
+
+.cta button{
+    margin-top:20px;
+    padding:10px 25px;
+    border:none;
+    border-radius:20px;
+    background:#d4af37;
+}
+
+/* FEATURE ICON */
+.feature-card img{
+    width:100px;
+    height:100px;
+    object-fit:contain;
+    margin-bottom:15px;
+}
+
+.feature-card h4{
+    margin-bottom:10px;
+    font-family:'Playfair Display', serif;
+    color:rgb(13 92 92 / var(--tw-text-opacity, 1));
+    font-weight: bold;
+    font-size: 30px;
+}
+.feature-card p{
+    font-size:15px;
+    opacity:0.8;
+}
+
+/* CENTER SEE ALL UPDATES BUTTON */
+.center-btn {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.btn-update {
+    background: linear-gradient(135deg, #d4af37, #f7e39c);
+    color: #022f2b;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-update:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* CTA BUTTON */
+.btn-cta {
+    background: linear-gradient(135deg, #d4af37, #f7e39c);
+    color: #022f2b;
+    padding: 12px 35px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+/* CENTER BUTTON - CLEAR */
+.center-btn {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.btn-clear {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-clear:hover {
+    background: linear-gradient(to right, #0D5C5C, #022f2b); /* same as hero bg */
+    color: #d4af37; /* optional: gold text on hover */
+    border-color: #d4af37;
+}
+
+/* CTA BUTTON - CLEAR */
+.btn-clear-cta {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 12px 35px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+/* GREEN BUTTON - WHITE FILL AND GREEN TEXT */
+.btn-green {
+    background: white; /* container white */
+    color: #0D5C5C; /* green text matching hero */
+    border: 2px solid #0D5C5C; /* green border */
+    padding: 12px 35px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+/* HOVER EFFECT - FILL GREEN, TEXT WHITE */
+.btn-green:hover {
+    background: #0D5C5C; /* hero green */
+    color: white;
+    border-color: #0D5C5C;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+/* CENTER BUTTON */
+.center-btn {
+    text-align: center;
+    margin: 40px 0;
+}
+
+/* FOOTER */
+.footer {
+    background: linear-gradient(to bottom, #0D5C5C, #022f2b);
+    color: white;
+    padding: 60px 80px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
+}
+
+.footer-column {
+    max-width: 280px;
+}
+
+.footer-column h4 {
+    margin-bottom: 15px;
+    color: #d4af37;
+    font-weight: 600;
+}
+
+.footer-column p {
+    margin-bottom: 8px;
+    font-size: 14px;
+    opacity: 0.85;
+}
+
+/* FOOTER LOGO */
+.footer-logo {
+    width: 250px;
+    height: 250px;
+
+    
+}
+
+/* NEWSLETTER FORM */
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.newsletter-form input[type="email"] {
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.newsletter-form button {
+    padding: 10px 25px;
+    border-radius: 20px;
+    border: none;
+    background: #d4af37;
+    color: #022f2b;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    background: #f7e39c;
+}
+
+/* FOOTER BOTTOM */
+.footer-bottom {
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    font-size: 13px;
+    opacity: 0.7;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="logo">
+        <img src="images/logo.png">
+        <span>JPIA<br><small>UE Caloocan</small></span>
+    </div>
+
+    <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">What We Do</a>
+        <a href="#">Activities</a>
+        <a href="#">Members</a>
+        <a href="#">News</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <a href="#" class="join-btn">Join Us</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+
+    <div class="hero-text">
+        <img src="images/logo.png" width="200"><br><br>
+
+        <h1>MALASINAG</h1>
+
+        <p><span class="gold">Masalinag</span> - where every spark holds purpose,</p>
+        <p><span class="gold">Silahis</span> - radiating excellence,</p>
+        <p>and every light leaves a <span class="gold">legacy.</span></p>
+
+        <div class="hero-buttons">
+            <a href="#" class="btn btn-primary">Join JPIA</a>
+            <a href="#" class="btn btn-outline">Learn More</a>
+        </div>
+    </div>
+
+    <div class="hero-img">
+        <img src="images/group.jpg">
+    </div>
+
+</section>
+
+
+<!-- FEATURES -->
+<section class="features">
+
+    <a href="about.html" class="feature-link">
+        <div class="feature-card">
+            <img src="https://image2url.com/r2/default/images/1772364635427-95bb88b2-f1f0-4a9a-85c7-d31046fdf78a.png">
+            <h4>Mission & Vision</h4>
+            <p>Discover our commitment to excellence.</p>
+        </div>
+    </a>
+
+    <a href="leadership.html" class="feature-link">
+        <div class="feature-card">
+            <img src="https://image2url.com/r2/default/images/1772364835788-fe43f934-3b90-4309-8bc4-630d0f613f3c.png">
+            <h4>Leadership</h4>
+            <p>Meet MALASINAG leaders.</p>
+        </div>
+    </a>
+
+    <a href="events.html" class="feature-link">
+        <div class="feature-card">
+            <img src="https://image2url.com/r2/default/images/1772364771509-3c77f1be-0ff6-4cd6-b477-f6232c01d924.png">
+            <h4>Events</h4>
+            <p>Stay updated with activities.</p>
+        </div>
+    </a>
+
+    <a href="members.html" class="feature-link">
+        <div class="feature-card">
+            <img src="https://image2url.com/r2/default/images/1772364686604-c80de1ae-6da8-4634-8e4d-41afe77075a2.png">
+            <h4>Membership</h4>
+            <p>Join our growing community.</p>
+        </div>
+    </a>
+
+</section>
+
+<!-- NEWS -->
+<section class="news">
+    <h2>Latest from JPIA</h2>
+
+    <div class="news-cards">
+        <div class="news-card">
+           
+            <img src="images/val.jpg">
+             <p>Project Puso<br>Will you be my Valentine?</p>
+            
+        </div>
+
+        <div class="news-card">
+            <img src="images/plato.jpg">
+            <p>Plato<br>The Academy of Eternal Insights</p>
+        </div>
+
+        <div class="news-card">
+            <img src="images/socrates.jpg">
+            <p>Socrates<br>The Athenian Quest for Excellence</p>
+        </div>
+    </div>
+</section>
+
+<!-- CENTERED SEE ALL UPDATES BUTTON -->
+<div class="center-btn">
+    <a href="#" class="btn btn-green">See All Updates</a>
+</div>
+
+<!-- CTA -->
+<section class="cta">
+    <h2>Join the MALASINAG Movement</h2>
+    <p>Be part of future accounting professionals.</p>
+    <a href="#" class="btn btn-green">Become a Member</a>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-top">
+
+        <!-- JPIA Logo Solo on Left -->
+         
+         <img src="images/logo.png" alt="JPIA Logo" class="footer-logo">
+        <div class="footer-column logo-col">
+            
+            <h4>JPIA</h4>
+            <p>UE Caloocan</p>
+            <p>Developing future accounting professionals through academic excellence and leadership.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-column">
+            <h4>Quick Links</h4>
+            <p>About</p>
+            <p>What We Do</p>
+            <p>Activities</p>
+            <p>Members</p>
+            <p>News</p>
+        </div>
+
+        <!-- Developers & Contact -->
+        <div class="footer-column">
+            <h4>Developers</h4>
+            <p>Contact</p>
+            <p>jpia.uecaloocan@gmail.com</p>
+            <p>+63 123 456 7890</p>
+            <p>University of the East Caloocan Campus, Caloocan City, Philippines</p>
+        </div>
+
+      
+
+    <div class="footer-bottom">
+        © 2025 JPIA UE Caloocan | MALASINAG Administration
+    </div>
+</footer>
+
+</body>
+</html>
