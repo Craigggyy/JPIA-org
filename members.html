@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Members — JPIA UE Caloocan</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --teal-dark: #022f2b;
+    --teal-mid: #0D5C5C;
+    --teal-light: #1a8a8a;
+    --gold: #d4af37;
+    --gold-light: #e8cc6a;
+    --cream: #faf8f3;
+    --white: #ffffff;
+    --text-dark: #1a1a1a;
+    --text-muted: #5a6a6a;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'DM Sans', sans-serif; background: var(--cream); overflow-x: hidden; color: var(--text-dark); }
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+
+/* ─── NAVBAR ─────────────────────────────────── */
+.navbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 18px 60px; position: fixed; width: 100%; top: 0;
+    background: rgba(2,47,43,0.85); backdrop-filter: blur(16px);
+    z-index: 9999; border-bottom: 1px solid rgba(212,175,55,0.15);
+}
+.logo { display: flex; align-items: center; gap: 12px; color: white; }
+.logo-icon {
+    width: 42px; height: 42px; background: var(--gold); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', serif; font-size: 18px;
+    font-weight: 700; color: var(--teal-dark);
+}
+.logo-text strong { display: block; font-size: 15px; letter-spacing: 0.05em; color: white; }
+.logo-text small { font-size: 11px; opacity: 0.7; letter-spacing: 0.08em; color: white; }
+.nav-links { display: flex; gap: 32px; }
+.nav-links a {
+    color: rgba(255,255,255,0.85); font-size: 13px;
+    letter-spacing: 0.04em; transition: color 0.3s; position: relative;
+}
+.nav-links a::after {
+    content: ''; position: absolute; bottom: -3px; left: 0;
+    width: 0; height: 1px; background: var(--gold); transition: width 0.3s;
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-links a:hover::after { width: 100%; }
+.join-btn {
+    background: var(--gold); color: var(--teal-dark); padding: 9px 24px;
+    border-radius: 30px; font-size: 13px; font-weight: 600;
+    letter-spacing: 0.04em; transition: all 0.3s;
+}
+.join-btn:hover { background: var(--gold-light); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(212,175,55,0.35); }
+
+/* ─── HERO ───────────────────────────────────── */
+.hero {
+    min-height: 100vh;
+    background: linear-gradient(155deg, #022f2b 0%, #0D5C5C 45%, #1a6b6b 75%, #0a4444 100%);
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden; padding: 120px 60px 80px;
+}
+.hero::before {
+    content: ''; position: absolute; inset: 0;
+    background:
+        radial-gradient(ellipse 60% 50% at 80% 20%, rgba(212,175,55,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 60% at 10% 80%, rgba(255,255,255,0.04) 0%, transparent 50%);
+    pointer-events: none;
+}
+.hero::after {
+    content: ''; position: absolute;
+    width: 600px; height: 600px; border-radius: 50%;
+    border: 1px solid rgba(212,175,55,0.07);
+    top: -150px; right: -150px; pointer-events: none;
+}
+.hero-inner {
+    max-width: 1400px; width: 100%;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 80px; align-items: center; position: relative; z-index: 1;
+}
+.hero-label {
+    font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 20px;
+    display: flex; align-items: center; gap: 12px;
+}
+.hero-label::before { content: ''; width: 40px; height: 1px; background: var(--gold); }
+.hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(52px, 6vw, 84px); font-weight: 600;
+    color: white; line-height: 1.05; margin-bottom: 28px;
+}
+.hero-title span { color: var(--gold); }
+.hero-desc {
+    font-size: 16px; line-height: 1.75;
+    color: rgba(255,255,255,0.75); max-width: 500px; margin-bottom: 40px;
+}
+.hero-stats { display: flex; gap: 40px; }
+.stat { text-align: center; }
+.stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px; font-weight: 700; color: var(--gold); line-height: 1;
+}
+.stat-label {
+    font-size: 11px; letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.6); margin-top: 6px; text-transform: uppercase;
+}
+.hero-card {
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(212,175,55,0.3);
+    border-radius: 20px; padding: 40px; backdrop-filter: blur(10px);
+    width: 100%; max-width: 480px; transition: border-color 0.3s;
+}
+.hero-card:hover { border-color: rgba(212,175,55,0.6); }
+.hero-card-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(212,175,55,0.2); border: 1px solid rgba(212,175,55,0.4);
+    color: var(--gold-light); padding: 6px 14px;
+    border-radius: 20px; font-size: 12px; letter-spacing: 0.05em; margin-bottom: 24px;
+}
+.badge-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--gold); animation: pulse 2s infinite;
+}
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+.hero-card h3 { font-family:'Cormorant Garamond',serif; font-size:28px; color:white; margin-bottom:16px; }
+.hero-card > p { color:rgba(255,255,255,0.7); line-height:1.7; font-size:14px; margin-bottom:24px; }
+.hero-card-divider { height:1px; background:linear-gradient(to right,rgba(212,175,55,0.5),transparent); margin-bottom:24px; }
+.hero-pillars { display:flex; flex-direction:column; gap:12px; }
+.pillar { display:flex; align-items:center; gap:12px; color:rgba(255,255,255,0.8); font-size:14px; }
+.pillar-dot { width:8px; height:8px; border-radius:50%; background:var(--gold); flex-shrink:0; }
+.scroll-indicator {
+    position: absolute; bottom: 40px; left: 50%;
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+    color: rgba(255,255,255,0.5); font-size: 11px; letter-spacing: 0.1em;
+    text-transform: uppercase; pointer-events: none;
+    animation: bounce 2.5s ease-in-out infinite;
+}
+.scroll-line { width:1px; height:40px; background:linear-gradient(to bottom,rgba(212,175,55,0.6),transparent); }
+@keyframes bounce {
+    0%,100% { transform: translateX(-50%) translateY(0); }
+    50%      { transform: translateX(-50%) translateY(8px); }
+}
+
+/* ─── SHARED ──────────────────────────────────── */
+.section-eyebrow {
+    font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 12px;
+    display: flex; align-items: center; gap: 12px;
+}
+.section-eyebrow::before { content:''; width:30px; height:1px; background:var(--gold); }
+.section-eyebrow.center { justify-content: center; }
+.section-eyebrow.center::before { display: none; }
+.section-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(38px,4vw,54px); font-weight: 600;
+    color: var(--teal-dark); line-height: 1.1; margin-bottom: 16px;
+}
+.section-heading.white { color: white; }
+.section-subtext {
+    font-size: 15px; color: var(--text-muted); line-height: 1.7;
+    max-width: 560px; margin-bottom: 60px;
+}
+.section-subtext.center { text-align: center; margin: 0 auto 60px; }
+.section-subtext.white { color: rgba(255,255,255,0.65); }
+
+/* ─── EXECUTIVE BOARD ────────────────────────── */
+.exec-section { padding: 120px 60px; background: var(--cream); }
+.exec-inner { max-width: 1400px; margin: 0 auto; }
+.exec-header { text-align: center; }
+
+/* ── President Card ── */
+.president-wrap { display: flex; justify-content: center; margin-bottom: 48px; }
+.president-card {
+    display: flex; gap: 50px; align-items: center;
+    background: linear-gradient(135deg, var(--teal-dark), var(--teal-mid));
+    border: 1px solid rgba(212,175,55,0.35);
+    border-radius: 24px; padding: 48px 56px;
+    max-width: 860px; width: 100%;
+    position: relative; overflow: hidden;
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+.president-card:hover { transform: translateY(-6px); box-shadow: 0 30px 70px rgba(2,47,43,0.4); }
+.president-card::before {
+    content: ''; position: absolute; top: -60px; right: -60px;
+    width: 220px; height: 220px; border-radius: 50%;
+    background: rgba(212,175,55,0.08); pointer-events: none;
+}
+
+/* President photo */
+.president-photo-wrap {
+    width: 160px; height: 160px; border-radius: 50%; flex-shrink: 0;
+    border: 3px solid var(--gold);
+    box-shadow: 0 0 0 6px rgba(212,175,55,0.15);
+    overflow: hidden;
+    background: rgba(255,255,255,0.1);
+}
+/* ↓ REPLACE src with your image path or URL */
+.president-photo-wrap img {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: top;
+    display: block;
+}
+.president-info { flex: 1; }
+.president-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(212,175,55,0.2); border: 1px solid rgba(212,175,55,0.4);
+    color: var(--gold-light); padding: 5px 14px;
+    border-radius: 20px; font-size: 11px; letter-spacing: 0.1em;
+    text-transform: uppercase; margin-bottom: 18px;
+}
+.president-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px; font-weight: 600; color: white; margin-bottom: 8px;
+}
+.president-role { font-size: 14px; color: var(--gold); font-weight: 600; letter-spacing: 0.05em; margin-bottom: 16px; }
+.president-quote {
+    font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.7;
+    border-left: 2px solid var(--gold); padding-left: 16px; font-style: italic;
+}
+
+/* ── Member Cards ── */
+.vp-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 24px;
+}
+.bottom-row {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 24px; max-width: 760px; margin: 0 auto;
+}
+.member-card {
+    background: white; border-radius: 18px;
+    border: 1px solid rgba(13,92,92,0.1);
+    overflow: hidden; transition: all 0.4s; position: relative;
+}
+.member-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(to right, var(--gold), var(--teal-mid));
+    transform: scaleX(0); transform-origin: left; transition: transform 0.4s;
+}
+.member-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(13,92,92,0.14); }
+.member-card:hover::before { transform: scaleX(1); }
+
+/* Member photo container */
+.member-photo-wrap {
+    overflow: hidden; height: 230px;
+    background: linear-gradient(135deg, #ddeaea, #b8d0d0);
+}
+/* ↓ REPLACE src with your image path or URL */
+.member-photo-wrap img {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: top;
+    display: block; transition: transform 0.5s;
+}
+.member-card:hover .member-photo-wrap img { transform: scale(1.05); }
+
+.member-body { padding: 22px 22px 24px; }
+.member-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px; font-weight: 600;
+    color: var(--teal-dark); margin-bottom: 6px; line-height: 1.2;
+}
+.member-role {
+    font-size: 12px; color: var(--gold); font-weight: 600;
+    letter-spacing: 0.06em; text-transform: uppercase; line-height: 1.5;
+}
+
+/* ─── YEAR REPRESENTATIVES ────────────────────── */
+.reps-section {
+    background: linear-gradient(to bottom, var(--teal-dark), #0a4040);
+    padding: 120px 60px; position: relative; overflow: hidden;
+}
+.reps-section::before {
+    content: ''; position: absolute; top: -100px; right: -100px;
+    width: 500px; height: 500px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(212,175,55,0.08) 0%, transparent 70%);
+    pointer-events: none;
+}
+.reps-inner { max-width: 1400px; margin: 0 auto; }
+.reps-section .section-eyebrow { color: var(--gold-light); }
+.reps-section .section-eyebrow::before { background: var(--gold-light); }
+.reps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.rep-card {
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(212,175,55,0.2);
+    border-radius: 20px; overflow: hidden; transition: all 0.4s;
+}
+.rep-card:hover {
+    background: rgba(255,255,255,0.11); transform: translateY(-6px);
+    border-color: rgba(212,175,55,0.5); box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
+/* Rep photo container */
+.rep-photo-wrap {
+    overflow: hidden; height: 260px; position: relative;
+    background: linear-gradient(145deg, rgba(212,175,55,0.15), rgba(255,255,255,0.05));
+}
+/* ↓ REPLACE src with your image path or URL */
+.rep-photo-wrap img {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: top;
+    display: block; filter: brightness(0.9);
+    transition: transform 0.5s, filter 0.4s;
+}
+.rep-card:hover .rep-photo-wrap img { transform: scale(1.05); filter: brightness(1); }
+
+.rep-year-badge {
+    position: absolute; top: 14px; left: 14px;
+    background: var(--gold); color: var(--teal-dark);
+    padding: 4px 12px; border-radius: 20px;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.06em;
+}
+.rep-body { padding: 24px; }
+.rep-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 600; color: white; margin-bottom: 6px;
+}
+.rep-role { font-size: 12px; color: var(--gold); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+
+/* ─── ADVISERS ────────────────────────────────── */
+.advisers-section {
+    padding: 120px 60px; background: var(--white); position: relative;
+}
+.advisers-section::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(to right, var(--gold), var(--teal-mid), var(--gold));
+}
+.advisers-inner { max-width: 1400px; margin: 0 auto; }
+.advisers-header { text-align: center; margin-bottom: 70px; }
+.advisers-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 36px; max-width: 900px; margin: 0 auto;
+}
+.adviser-card {
+    border-radius: 22px; overflow: hidden;
+    transition: all 0.4s; box-shadow: 0 10px 40px rgba(13,92,92,0.1);
+}
+.adviser-card:hover { transform: translateY(-8px); box-shadow: 0 28px 60px rgba(13,92,92,0.18); }
+
+/* Adviser photo container */
+.adviser-photo-wrap {
+    overflow: hidden; height: 320px; position: relative;
+    background: linear-gradient(145deg, #c5dede, #8eb8b8);
+}
+/* ↓ REPLACE src with your image path or URL */
+.adviser-photo-wrap img {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: top;
+    display: block; transition: transform 0.5s;
+}
+.adviser-card:hover .adviser-photo-wrap img { transform: scale(1.04); }
+
+.adviser-type-badge {
+    position: absolute; top: 16px; right: 16px;
+    padding: 5px 14px; border-radius: 20px;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+}
+.student-badge { background: rgba(13,92,92,0.9); color: var(--gold-light); border: 1px solid rgba(212,175,55,0.4); }
+.faculty-badge { background: rgba(212,175,55,0.92); color: var(--teal-dark); }
+.adviser-body {
+    padding: 28px 30px 32px; background: white;
+    border-top: 3px solid var(--gold);
+}
+.adviser-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px; font-weight: 600; color: var(--teal-dark); margin-bottom: 6px;
+}
+.adviser-role { font-size: 13px; color: var(--gold); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+.adviser-desc { font-size: 14px; color: var(--text-muted); line-height: 1.65; margin-top: 12px; }
+
+/* ─── CTA ────────────────────────────────────── */
+.cta-banner {
+    background: linear-gradient(135deg, var(--gold) 0%, #b8941f 100%);
+    padding: 100px 60px; text-align: center; position: relative; overflow: hidden;
+}
+.cta-banner::before {
+    content: ''; position: absolute; top: -50%; left: -20%;
+    width: 60%; height: 200%; background: rgba(255,255,255,0.08);
+    transform: skewX(-15deg); pointer-events: none;
+}
+.cta-banner::after {
+    content: ''; position: absolute; bottom: -60%; right: -10%;
+    width: 50%; height: 200%; background: rgba(255,255,255,0.05);
+    transform: skewX(-15deg); pointer-events: none;
+}
+.cta-banner h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(34px,4vw,56px); color: var(--teal-dark);
+    margin-bottom: 16px; position: relative; z-index: 1;
+}
+.cta-banner p {
+    font-size: 16px; color: rgba(2,47,43,0.75);
+    max-width: 520px; margin: 0 auto 40px;
+    position: relative; z-index: 1; line-height: 1.7;
+}
+.cta-buttons { display: flex; gap: 16px; justify-content: center; position: relative; z-index: 1; }
+.btn-primary {
+    background: var(--teal-dark); color: white;
+    padding: 15px 40px; border-radius: 50px; font-size: 14px;
+    font-weight: 600; letter-spacing: 0.04em; transition: all 0.3s;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(2,47,43,0.35); background: #033a35; }
+.btn-secondary {
+    background: transparent; color: var(--teal-dark);
+    padding: 15px 40px; border-radius: 50px; font-size: 14px;
+    font-weight: 600; letter-spacing: 0.04em;
+    border: 2px solid rgba(2,47,43,0.35); transition: all 0.3s;
+}
+.btn-secondary:hover { background: rgba(2,47,43,0.1); transform: translateY(-2px); }
+
+/* ─── FOOTER ─────────────────────────────────── */
+.footer { background: var(--teal-dark); color: white; padding: 70px 60px 36px; }
+.footer-top {
+    display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 60px; padding-bottom: 50px;
+    border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 36px;
+}
+.footer-brand p { font-size:14px; color:rgba(255,255,255,0.55); line-height:1.7; margin-top:16px; max-width:260px; }
+.footer-logo-wrap { display:flex; align-items:center; gap:12px; margin-bottom:16px; }
+.footer-col h4 { font-size:12px; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); margin-bottom:20px; }
+.footer-col a { display:block; color:rgba(255,255,255,0.55); font-size:14px; margin-bottom:10px; transition:color 0.3s; }
+.footer-col a:hover { color:white; }
+.footer-bottom {
+    display:flex; justify-content:space-between; align-items:center;
+    font-size:12px; color:rgba(255,255,255,0.4);
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="logo">
+        <div class="logo-icon">JP</div>
+        <div class="logo-text">
+            <strong>JPIA</strong>
+            <small>UE Caloocan</small>
+        </div>
+    </div>
+    <div class="nav-links">
+        <a href="main.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="what we do.html">What We Do</a>
+        <a href="activities.html">Activities</a>
+        <a href="members.html">Members</a>
+        <a href="news.html">News</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    <a href="#" class="join-btn">Join Us</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-inner">
+        <div class="hero-left">
+            <div class="hero-label">MALASINAG Administration · 2025–2026</div>
+            <h1 class="hero-title">
+                Meet the People Behind <span>MALASINAG</span>
+            </h1>
+            <p class="hero-desc">
+                Passionate leaders and representatives who embody the spirit of excellence, dedication, and service in JPIA UE Caloocan.
+            </p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-num">10</div>
+                    <div class="stat-label">Exec Board</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">4</div>
+                    <div class="stat-label">Year Reps</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">2</div>
+                    <div class="stat-label">Advisers</div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-card">
+                <div class="hero-card-badge">
+                    <span class="badge-dot"></span>
+                    Active Administration
+                </div>
+                <h3>Our Leadership</h3>
+                <p>JPIA UE Caloocan is led by dedicated officers and representatives committed to elevating the organization and its members to new heights.</p>
+                <div class="hero-card-divider"></div>
+                <div class="hero-pillars">
+                    <div class="pillar"><div class="pillar-dot"></div>Executive Board 2025–2026</div>
+                    <div class="pillar"><div class="pillar-dot"></div>Year Level Representatives</div>
+                    <div class="pillar"><div class="pillar-dot"></div>Faculty & Student Advisers</div>
+                    <div class="pillar"><div class="pillar-dot"></div>Guided by Excellence</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="scroll-indicator">
+        <div class="scroll-line"></div>
+        <span>Scroll</span>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- EXECUTIVE BOARD                             -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="exec-section">
+    <div class="exec-inner">
+        <div class="exec-header">
+            <div class="section-eyebrow center">Executive Board 2025–2026</div>
+            <h2 class="section-heading" style="text-align:center;">Our Core Leadership Team</h2>
+            <p class="section-subtext center">The passionate leaders driving our mission forward with vision and commitment.</p>
+        </div>
+
+        <!-- ── PRESIDENT ── -->
+        <div class="president-wrap">
+            <div class="president-card">
+                <div class="president-photo-wrap">
+                    <!-- REPLACE src below with your photo path or URL -->
+                    <img src="images/richard-vito.jpg" alt="Richard Jr. A. Vito">
+                </div>
+                <div class="president-info">
+                    <div class="president-badge">⭐ President</div>
+                    <div class="president-name">Richard Jr. A. Vito</div>
+                    <div class="president-role">President · JPIA UE Caloocan</div>
+                    <div class="president-quote">
+                        Leading the MALASINAG Administration with dedication to excellence, integrity, and the advancement of every JPIA member.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── VP ROW 1 ── -->
+        <div class="vp-grid">
+            <div class="member-card">
+                <div class="member-photo-wrap">
+                    <!-- REPLACE src below with your photo path or URL -->
+                    <img src="images/kamille-garcia.jpg" alt="Kamille A. Garcia">
+                </div>
+                <div class="member-body">
+                    <div class="member-name">Kamille A. Garcia</div>
+                    <div class="member-role">VP for External Affairs</div>
+                </div>
+            </div>
+            <div class="member-card">
+                <div class="member-photo-wrap">
+                    <!-- REPLACE src below with your photo path or URL -->
+                    <img src="images/lanz-campos.jpg" alt="Lanz Benedict N. Campos">
+                </div>
+                <div class="member-body">
+                    <div class="member-name">Lanz Benedict N. Campos</div>
+                    <div class="member-role">VP for Academics</div>
+                </div>
+            </div>
+            <div class="member-card">
+                <div class="member-photo-wrap">
+                    <!-- REPLACE src below with your photo path or URL -->
+                    <img src="images/jasmine-margelino.jpg" alt="Jasmine Nicole D. Margelino">
+                </div>
+                <div class="member-body">
+                    <div class="member-name">Jasmine Nicole D. Margelino</div>
+                    <div class="member-role">VP for Non-Academics</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── VP ROW 2 ── -->
+        <div class="vp-grid">
+            <div class="member-card">
+                <div class="member-photo-wrap">
+                    <!-- REPLACE src below with your photo path or URL -->
+                    <img src="images/jaimie-castro.jpg" alt="Jaimie Angelique P. Castro">
+                </div>
+                <div class="member-body">
+                    <div class="member-name">Jaimie Angelique P. Castro</div>
+                    <div class="member-role">VP for Membership</div>
+                </div>
+            </div>
+            <div class="member-card">
+                <div class="member-photo-wrap">
+                    <!-- REPLACE src below with your photo path or URL -->
+                    <img src="images/ahlvyne-molina.jpg" alt="Ahlvyne Lloyd V. Molina">
+                </div>
+                <div class="member-body">
+                    <div class="member-name">Ahlvyne Lloyd V. Molina</div>
+                    <div class="member-role">VP for Finance</div>
+                </div>
+            </div>
+            <div class="member-card">
+                <div class="member-photo-wrap">
+                    <!-- REPLACE src below with your photo path or URL -->
+                    <img src="images/leanne-bagtas.jpg" alt="Leanne Angel P. Bagtas">
+                </div>
+                <div class="member-body">
+                    <div class="member-name">Leanne Angel P. Bagtas</div>
+                    <div class="member-role">VP for Audit</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── BOTTOM ROW ── -->
+        <div class="bottom-row">
+            <div class="member-card">
+                <div class="member-photo-wrap">
+                    <!-- REPLACE src below with your photo path or URL -->
+                    <img src="images/kc-badion.jpg" alt="Kc Ruth Anne B. Badion">
+                </div>
+                <div class="member-body">
+                    <div class="member-name">Kc Ruth Anne B. Badion</div>
+                    <div class="member-role">Executive Secretary</div>
+                </div>
+            </div>
+            <div class="member-card">
+                <div class="member-photo-wrap">
+                    <!-- REPLACE src below with your photo path or URL -->
+                    <img src="images/angelo-nullar.jpg" alt="Angelo Robert B. Nullar">
+                </div>
+                <div class="member-body">
+                    <div class="member-name">Angelo Robert B. Nullar</div>
+                    <div class="member-role">Executive Officer for Information and Publicity</div>
+                </div>
+            </div>
+            <div class="member-card">
+                <div class="member-photo-wrap">
+                    <!-- REPLACE src below with your photo path or URL -->
+                    <img src="images/daniela-kiang.jpg" alt="Daniela L. Kiang">
+                </div>
+                <div class="member-body">
+                    <div class="member-name">Daniela L. Kiang</div>
+                    <div class="member-role">Sponsorship Manager</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- YEAR REPRESENTATIVES                        -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="reps-section">
+    <div class="reps-inner">
+        <div class="section-eyebrow">Year Representatives</div>
+        <h2 class="section-heading white">Voices of Every Year Level</h2>
+        <p class="section-subtext white">Bridging students and leadership — each representative champions their year level's needs and aspirations.</p>
+        <div class="reps-grid">
+            <div class="rep-card">
+                <div class="rep-photo-wrap">
+                    <!-- REPLACE src below with your photo path or URL -->
+                    <img src="images/jemima-cabasal.jpg" alt="Jemima A. Cabasal">
+                    <div class="rep-year-badge">4th Year</div>
+                </div>
+                <div class="rep-body">
+                    <div class="rep-name">Jemima A. Cabasal</div>
+                    <div class="rep-role">4th Year Representative</div>
+                </div>
+            </div>
+            <div class="rep-card">
+                <div class="rep-photo-wrap">
+                    <!-- REPLACE src below with your photo path or URL -->
+                    <img src="images/marlon-manalang.jpg" alt="Marlon Jr. D. Manalang">
+                    <div class="rep-year-badge">3rd Year</div>
+                </div>
+                <div class="rep-body">
+                    <div class="rep-name">Marlon Jr. D. Manalang</div>
+                    <div class="rep-role">3rd Year Representative</div>
+                </div>
+            </div>
+            <div class="rep-card">
+                <div class="rep-photo-wrap">
+                    <!-- REPLACE src below with your photo path or URL -->
+                    <img src="images/justine-pondara.jpg" alt="Justine Rose R. Pondara">
+                    <div class="rep-year-badge">2nd Year</div>
+                </div>
+                <div class="rep-body">
+                    <div class="rep-name">Justine Rose R. Pondara</div>
+                    <div class="rep-role">2nd Year Representative</div>
+                </div>
+            </div>
+            <div class="rep-card">
+                <div class="rep-photo-wrap">
+                    <!-- REPLACE src below with your photo path or URL -->
+                    <img src="images/xyrus-lacurom.jpg" alt="Xyrus John M. Lacurom">
+                    <div class="rep-year-badge">1st Year</div>
+                </div>
+                <div class="rep-body">
+                    <div class="rep-name">Xyrus John M. Lacurom</div>
+                    <div class="rep-role">1st Year Representative</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- ADVISERS                                    -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="advisers-section">
+    <div class="advisers-inner">
+        <div class="advisers-header">
+            <div class="section-eyebrow center">Our Advisers</div>
+            <h2 class="section-heading" style="text-align:center;">Guiding Lights</h2>
+            <p class="section-subtext center">Mentors who support our journey and inspire us to pursue excellence at every step.</p>
+        </div>
+        <div class="advisers-grid">
+            <div class="adviser-card">
+                <div class="adviser-photo-wrap">
+                    <!-- REPLACE src below with your photo path or URL -->
+                    <img src="images/jhannamae-vinas.jpg" alt="Jhannamae Rose A. Viñas">
+                    <div class="adviser-type-badge student-badge">Student Adviser</div>
+                </div>
+                <div class="adviser-body">
+                    <div class="adviser-name">Jhannamae Rose A. Viñas</div>
+                    <div class="adviser-role">Student Adviser</div>
+                    <div class="adviser-desc">Guiding members with dedication and a deep commitment to the growth and success of JPIA UE Caloocan.</div>
+                </div>
+            </div>
+            <div class="adviser-card">
+                <div class="adviser-photo-wrap">
+                    <!-- REPLACE src below with your photo path or URL -->
+                    <img src="images/lea-vergino.jpg" alt="Ms. Lea Christine S. Vergino, CPA">
+                    <div class="adviser-type-badge faculty-badge">Faculty Adviser</div>
+                </div>
+                <div class="adviser-body">
+                    <div class="adviser-name">Ms. Lea Christine S. Vergino, CPA</div>
+                    <div class="adviser-role">Faculty Adviser</div>
+                    <div class="adviser-desc">A certified public accountant who provides professional guidance and mentorship to future accounting leaders.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner">
+    <h2>Want to Be Part of This Team?</h2>
+    <p>Join JPIA UE Caloocan and become a member of a community that's shaping the future of accounting.</p>
+    <div class="cta-buttons">
+        <a href="#" class="btn-primary">Apply to Join</a>
+        <a href="#" class="btn-secondary">Learn More</a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-top">
+        <div class="footer-brand">
+            <div class="footer-logo-wrap">
+                <div class="logo-icon">JP</div>
+                <div>
+                    <strong style="display:block;color:white;font-size:15px;letter-spacing:0.05em;">JPIA</strong>
+                    <small style="font-size:11px;color:rgba(255,255,255,0.6);letter-spacing:0.08em;">UE Caloocan</small>
+                </div>
+            </div>
+            <p>A premier student organization shaping future accounting professionals through excellence, leadership, and service.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Navigate</h4>
+            <a href="main.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="what we do.html">What We Do</a>
+            <a href="activities.html">Activities</a>
+        </div>
+        <div class="footer-col">
+            <h4>Connect</h4>
+            <a href="members.html">Members</a>
+            <a href="news.html">News</a>
+            <a href="contact.html">Contact</a>
+            <a href="#">Join Us</a>
+        </div>
+        <div class="footer-col">
+            <h4>Contact</h4>
+            <a href="mailto:jpia.uecaloocan@gmail.com">jpia.uecaloocan@gmail.com</a>
+            <a href="#">+63 123 456 7890</a>
+            <a href="#">UE Caloocan Campus</a>
+            <a href="developers.html">Developers</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>© 2025 JPIA UE Caloocan · MALASINAG Administration</span>
+        <span>Made with ♡ for future CPAs</span>
+    </div>
+</footer>
+
+</body>
+</html>
