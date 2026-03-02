@@ -660,13 +660,22 @@ body {
 
 .upd-row {
     display: grid;
-    grid-template-columns: 100px 1fr 50px;
-    gap: 50px;
+grid-template-columns: 100px 1fr 300px;    gap: 40px;
     padding: 36px 0;
     border-top: 1px solid rgba(0,0,0,0.08);
-    align-items: start;
+    align-items: center;
     position: relative;
 }
+.upd-row img {
+    width: 230px;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 10px;
+
+    justify-self: center; /* THIS centers it */
+}
+
+
 
 .upd-row:last-child { border-bottom: 1px solid rgba(0,0,0,0.08); }
 
@@ -944,6 +953,12 @@ body {
     opacity: 0.7;
 }
 
+.img-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
 </style>
 </head>
 <body>
@@ -983,14 +998,10 @@ body {
 
     <div class="hero-stats">
         <div class="hero-stat">
-            <span class="big">6</span>
+            <span class="big">4</span>
             <span class="sm">Major Events</span>
         </div>
-        <div class="hero-stat-sep"></div>
-        <div class="hero-stat">
-            <span class="big">400+</span>
-            <span class="sm">Participants</span>
-        </div>
+       
         <div class="hero-stat-sep"></div>
         <div class="hero-stat">
             <span class="big">2</span>
@@ -998,8 +1009,8 @@ body {
         </div>
         <div class="hero-stat-sep"></div>
         <div class="hero-stat">
-            <span class="big">95%</span>
-            <span class="sm">Retention Rate</span>
+            <span class="big">3</span>
+            <span class="sm">News / Announcements</span>
         </div>
     </div>
 </section>
@@ -1018,82 +1029,28 @@ body {
     <div class="timeline">
         <div class="tl-spine"></div>
 
-        <!-- 1 -->
-        <div class="tl-item">
-            <div class="tl-date">
-                <span class="mo">March</span>
-                <span class="dy">15</span>
-                <span class="yr">2025</span>
-            </div>
-            <div class="tl-dot"></div>
-            <div class="tl-body">
-                <div class="tl-cat">Leadership Development</div>
-                <div class="tl-inner">
-                    <div>
-                        <h3>MALASINAG Leadership Summit 2025</h3>
-                        <p>A comprehensive leadership training program for all executive board members and year representatives, focusing on strategic planning, team management, and organizational excellence.</p>
-                        <div class="tl-stats">
-                            <div class="tl-stat"><span class="num">45</span><span class="lbl">Participants</span></div>
-                            <div class="tl-outcome">Enhanced leadership capabilities</div>
-                        </div>
-                    </div>
-                    <div class="img-placeholder">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0D5C5C" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                        <span>Add Photo Here</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 2 -->
-        <div class="tl-item">
-            <div class="tl-date">
-                <span class="mo">Feb</span>
-                <span class="dy">20</span>
-                <span class="yr">2025</span>
-            </div>
-            <div class="tl-dot"></div>
-            <div class="tl-body">
-                <div class="tl-cat">Academic Excellence</div>
-                <div class="tl-inner">
-                    <div>
-                        <h3>Financial Literacy Webinar Series</h3>
-                        <p>Three-day intensive webinar series covering personal finance management, investment basics, and financial planning. Featured industry experts and certified financial planners.</p>
-                        <div class="tl-stats">
-                            <div class="tl-stat"><span class="num">120</span><span class="lbl">Participants</span></div>
-                            <div class="tl-outcome">Improved financial awareness</div>
-                        </div>
-                    </div>
-                    <div class="img-placeholder">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0D5C5C" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                        <span>Add Photo Here</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+       
 
         <!-- 3 -->
         <div class="tl-item">
             <div class="tl-date">
-                <span class="mo">Jan</span>
-                <span class="dy">28</span>
-                <span class="yr">2025</span>
+                <span class="mo">Feb</span>
+                <span class="dy">14</span>
+                <span class="yr">2026</span>
             </div>
             <div class="tl-dot"></div>
             <div class="tl-body">
-                <div class="tl-cat">Community Service</div>
+                <div class="tl-cat">Anonymous Confessions</div>
                 <div class="tl-inner">
                     <div>
-                        <h3>Community Outreach: Tax Assistance Program</h3>
-                        <p>Free tax filing assistance for low-income families in Caloocan City. JPIA members provided guidance on tax compliance and documentation requirements.</p>
+                        <h3>𝑪𝒖𝒑𝒊𝒅'𝒔 𝑱𝒐𝒖𝒓𝒏𝒂𝒍</h3>
+                        <p>𝗧𝗵𝗶𝗻𝗸 𝗼𝗳 𝘁𝗵𝗶𝘀 𝗮𝘀 𝗼𝘂𝗿 𝘃𝗲𝗿𝘆 𝗼𝘄𝗻 𝗹𝗼𝘃𝗲 𝗷𝗼𝘂𝗿𝗻𝗮𝗹 —where feelings are recorded, memories are shared, and hearts are balanced.</p>
                         <div class="tl-stats">
-                            <div class="tl-stat"><span class="num">30</span><span class="lbl">Volunteers</span></div>
-                            <div class="tl-stat"><span class="num">85</span><span class="lbl">Families</span></div>
                         </div>
                     </div>
+                    
                     <div class="img-placeholder">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0D5C5C" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                        <span>Add Photo Here</span>
+              <img src="https://image2url.com/r2/default/images/1772458551122-e45557be-1b30-442a-8d1e-687dbb1e284a.png" alt="Activity Image">
                     </div>
                 </div>
             </div>
@@ -1102,25 +1059,22 @@ body {
         <!-- 4 -->
         <div class="tl-item">
             <div class="tl-date">
-                <span class="mo">Dec</span>
-                <span class="dy">10</span>
-                <span class="yr">2024</span>
+                <span class="mo">Oct</span>
+                <span class="dy">21</span>
+                <span class="yr">2025</span>
             </div>
             <div class="tl-dot"></div>
             <div class="tl-body">
-                <div class="tl-cat">Academic Competition</div>
+                <div class="tl-cat">𝗝𝗣𝗜𝗔 𝗚𝗲𝗻𝗲𝗿𝗮𝗹 𝗔𝘀𝘀𝗲𝗺𝗯𝗹𝘆 𝟮𝟬𝟮𝟱</div>
                 <div class="tl-inner">
                     <div>
-                        <h3>Inter-School Accounting Quiz Bowl</h3>
-                        <p>Hosted the annual inter-school accounting competition featuring teams from 8 universities across Metro Manila. JPIA UE Caloocan secured 2nd place overall.</p>
+                        <h3>“𝑳𝒆𝒕 𝒕𝒉𝒆 𝒘𝒂𝒗𝒆𝒔 𝒄𝒂𝒓𝒓𝒚 𝒚𝒐𝒖 𝒘𝒉𝒆𝒓𝒆 𝒕𝒉𝒆 𝒍𝒊𝒈𝒉𝒕 𝒄𝒂𝒏𝒏𝒐𝒕.” </h3>
+                        <p>Expect an afternoon of fun activities, inspiring messages, and heartfelt camaraderie as we unite once more in the spirit of excellence, resilience, and JPIAn pride!</p>
                         <div class="tl-stats">
-                            <div class="tl-stat"><span class="num">8</span><span class="lbl">Universities</span></div>
-                            <div class="tl-outcome">&#127942; 2nd Place Overall</div>
                         </div>
                     </div>
                     <div class="img-placeholder">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0D5C5C" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                        <span>Add Photo Here</span>
+                        <img src="https://image2url.com/r2/default/images/1772458458460-a0dcbff7-1d06-4302-aabe-fd8deec2175f.png" alt="">
                     </div>
                 </div>
             </div>
@@ -1129,25 +1083,22 @@ body {
         <!-- 5 -->
         <div class="tl-item">
             <div class="tl-date">
-                <span class="mo">Nov</span>
-                <span class="dy">18</span>
-                <span class="yr">2024</span>
+                <span class="mo">Aug</span>
+                <span class="dy">22</span>
+                <span class="yr">2025</span>
             </div>
             <div class="tl-dot"></div>
             <div class="tl-body">
-                <div class="tl-cat">Organizational Meeting</div>
+                <div class="tl-cat">𝐁𝐞𝐲𝐨𝐧𝐝 𝐛𝐨𝐨𝐤𝐬 𝐚𝐧𝐝 𝐧𝐮𝐦𝐛𝐞𝐫𝐬</div>
                 <div class="tl-inner">
                     <div>
-                        <h3>JPIA General Assembly: Semester Kickoff</h3>
-                        <p>First general assembly of the MALASINAG administration. Introduced the executive board, presented the annual roadmap, and conducted team-building activities.</p>
+                        <h3>Just like the 𝐍𝐨𝐧-𝐀𝐜𝐚𝐝𝐞𝐦𝐢𝐜 𝐀𝐬𝐬𝐨𝐜𝐢𝐚𝐭𝐞𝐬, 𝑷𝒂𝒔𝒔𝒊𝒐𝒏 𝒊𝒏 𝒎𝒐𝒕𝒊𝒐𝒏, 𝒖𝒏𝒊𝒕𝒚 𝒊𝒏 𝒆𝒙𝒑𝒓𝒆𝒔𝒔𝒊𝒐𝒏.</h3>
+                        <p>As a Non-Academic Associate, you are the rhythm and color of JPIA — making our community more alive and balanced.</p>
                         <div class="tl-stats">
-                            <div class="tl-stat"><span class="num">150</span><span class="lbl">Participants</span></div>
-                            <div class="tl-outcome">Unified membership and direction</div>
                         </div>
                     </div>
                     <div class="img-placeholder">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0D5C5C" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                        <span>Add Photo Here</span>
+                        <img src="https://image2url.com/r2/default/images/1772458125246-143c9af8-80cc-4b87-b331-d4674a062296.png" alt="">
                     </div>
                 </div>
             </div>
@@ -1156,25 +1107,22 @@ body {
         <!-- 6 -->
         <div class="tl-item">
             <div class="tl-date">
-                <span class="mo">Oct</span>
-                <span class="dy">25</span>
-                <span class="yr">2024</span>
+                <span class="mo">Sept</span>
+                <span class="dy">8</span>
+                <span class="yr">2025</span>
             </div>
             <div class="tl-dot"></div>
             <div class="tl-body">
-                <div class="tl-cat">Professional Development</div>
+                <div class="tl-cat">Pokemon The JPIA Version</div>
                 <div class="tl-inner">
                     <div>
-                        <h3>Ethics in Accounting Workshop</h3>
-                        <p>Workshop on ethical standards in the accounting profession, featuring case studies and discussions on professional responsibility, integrity, and ethical decision-making.</p>
+                        <h3>𝐓𝐡𝐞 𝐑𝐚𝐝𝐢𝐚𝐧𝐭 𝐄𝐦𝐞𝐫𝐚𝐥𝐝 𝐐𝐮𝐞𝐬𝐭</h3>
+                        <p> Just like every Pokémon trainer beginning their quest, your adventure with JPIA is filled with opportunities to 𝗹𝗲𝗮𝗿𝗻, 𝗴𝗿𝗼𝘄, 𝗮𝗻𝗱 𝗲𝘃𝗼𝗹𝘃𝗲.</p>
                         <div class="tl-stats">
-                            <div class="tl-stat"><span class="num">65</span><span class="lbl">Participants</span></div>
-                            <div class="tl-outcome">Strengthened ethical awareness</div>
                         </div>
                     </div>
                     <div class="img-placeholder">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0D5C5C" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                        <span>Add Photo Here</span>
+                        <img src="https://image2url.com/r2/default/images/1772457848846-b3b2846f-d03a-4fc4-8124-1e908bd478df.png" alt="">
                     </div>
                 </div>
             </div>
@@ -1199,7 +1147,7 @@ body {
         <div class="rep-qtr">Q1</div>
         <div>
             <div class="rep-name">First Quarter Progress Report</div>
-            <div class="rep-date">March 31, 2025</div>
+            <div class="rep-date">November 31, 2025</div>
             <ul class="rep-list">
                 <li>Successfully launched 3 major events with 200+ total participants</li>
                 <li>Achieved 95% member retention rate</li>
@@ -1208,31 +1156,25 @@ body {
             </ul>
             
         </div>
-        <div class="rep-img-placeholder">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-            <span>Add Photo Here</span>
-        </div>
+      
         
     </div>
 
     <!-- Q4 -->
     <div class="rep-row">
-        <div class="rep-qtr">Q4</div>
+        <div class="rep-qtr">Q2</div>
         <div>
             <div class="rep-name">Fourth Quarter Accomplishment Report</div>
-            <div class="rep-date">December 31, 2024</div>
+            <div class="rep-date">December 31, 2025</div>
             <ul class="rep-list">
-                <li>Hosted successful Inter-School Quiz Bowl with 8 participating universities</li>
+                <li>Hosted successful a lot of activities in the University of the East</li>
                 <li>Conducted 2 community outreach programs</li>
                 <li>Onboarded 45 new members from freshman batch</li>
                 <li>Established MALASINAG administration and transition</li>
             </ul>
             
         </div>
-        <div class="rep-img-placeholder">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-            <span>Add Photo Here</span>
-        </div>
+     
         
     </div>
 </section>
@@ -1250,35 +1192,45 @@ body {
 
     <div class="upd-row">
         <div class="upd-date">
-            <span class="mo">April</span>
-            <span class="dy">05</span>
-            <span class="yr">2025</span>
+            <span class="mo">Feb</span>
+            <span class="dy">27</span>
+            <span class="yr">2026</span>
         </div>
         <div class="upd-main">
-            <span class="upd-tag tag-p">Partnership</span>
-            <h4>New Partnership with SGV &amp; Co.</h4>
-            <p>JPIA UE Caloocan is proud to announce a strategic partnership with SGV &amp; Co. for mentorship programs and internship opportunities for our members.</p>
+            <span class="upd-tag tag-p">Announcement</span>
+            <h4>🎉 Get a Chance to Win ₱100! (3 Winners) 🎉</h4>
+            <p>We would greatly appreciate your participation in their study by answering this survey. Taking part is completely optional, and you are free to exit the survey at any time. All responses will remain confidential and will be used only for academic and research purposes.
+As a token of appreciation, three (3) respondents will be randomly selected to receive ₱100 each 🎁
+Thank you for your time and cooperation. Your participation will greatly contribute to the success of this study.  https://docs.google.com/.../1FAIpQLScbo4BCzT2.../viewform...</p>
+        </div>
+        <div class="upd-img">
+
+        <img src="https://image2url.com/r2/default/images/1772459950981-27f360e8-ca4c-4301-857c-55454c727369.png" alt="">
         </div>
         
     </div>
 
     <div class="upd-row">
         <div class="upd-date">
-            <span class="mo">March</span>
-            <span class="dy">28</span>
-            <span class="yr">2025</span>
+            <span class="mo">Feb</span>
+            <span class="dy">11</span>
+            <span class="yr">2026</span>
         </div>
         <div class="upd-main">
             <span class="upd-tag tag-a">Announcement</span>
-            <h4>Upcoming CPA Review Sessions</h4>
-            <p>Free CPA review sessions will be conducted every Saturday starting April 15. Open to all 4th year members preparing for board examinations.</p>
+            <h4>"Through the Lens: Break the Silence" </h4>
+            <p>Want to make a real difference? Form a team of 3 to 5 members and create a 3- to 5-minute video that fosters empathy, empowers bystanders, and promotes respect within our community. Your video could be featured in future anti-bullying campaigns at UE.</p>
+        </div>
+        <div class="upd-img">
+
+        <img src="https://image2url.com/r2/default/images/1772459923779-63f0003e-a97c-4fc9-a42a-e5331ca5d28e.png" alt="">
         </div>
         
     </div>
 
     <div class="upd-row">
         <div class="upd-date">
-            <span class="mo">March</span>
+            <span class="mo">Aug</span>
             <span class="dy">20</span>
             <span class="yr">2025</span>
         </div>
@@ -1287,20 +1239,13 @@ body {
             <h4>MALASINAG Merchandise Now Available</h4>
             <p>Official JPIA merchandise featuring the MALASINAG theme is now available for order. Proceeds will support scholarship programs.</p>
         </div>
-       
+        <div class="upd-img">
+
+        <img src="https://image2url.com/r2/default/images/1772459866197-4b58d213-39e8-462c-8072-44a3d5b56758.png" alt="">
+        </div>
     </div>
 
-    <div class="upd-row">
-        <div class="upd-date">
-            <span class="mo">March</span>
-            <span class="dy">10</span>
-            <span class="yr">2025</span>
-        </div>
-        <div class="upd-main">
-            <span class="upd-tag tag-r">Recognition</span>
-            <h4>Member Spotlight: Excellence Awardees</h4>
-            <p>Congratulations to our members who received Dean's List recognition for the previous semester. Your dedication and hard work inspire us all.</p>
-        </div>
+   
        
     </div>
 </section>
